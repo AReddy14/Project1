@@ -4,4 +4,6 @@ class Pet < ActiveRecord::Base
 		config.api_secret = ENV['PET_FINDER_SECRET']
 	end
 	petfinder = Petfinder::Client.new
+
+	
 end

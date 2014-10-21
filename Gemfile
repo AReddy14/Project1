@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'petfinder'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0.beta2'
 # Use postgresql as the database for Active Record
@@ -34,11 +34,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   # Call 'debugger' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-
+  gem 'pry-byebug'
+  gem 'pry-rails'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0.0.beta4'
-
+  gem 'dotenv-rails'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end

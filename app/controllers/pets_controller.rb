@@ -3,11 +3,11 @@ class PetsController < ApplicationController
 		# These come from the URL
 		# Example: http://localhost:3000/pets?location=Boston,MA&kind=cat
 		location = params[:location]
-		kind = params[:kind]
-
-		if !location.nil? && !kind.nil?
+		animal = params[:animal]
+		# binding.pry
+		if !location.nil? && !animal.nil?
 			# Search Petfinder
-			Pet.search(kind, location)
+			@pets = Pet.search(animal, location)
 		else
 			# Return an empty array of pets so that it doesn't get a NoMethod error when calling .each
 			@pets = []

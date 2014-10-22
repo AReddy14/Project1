@@ -1,7 +1,11 @@
 <h1>Adoption</h1>
 
-<select name="Animal Type[animal]">
-	<option>dog</option>
-	<option>cat</option>
-	<option>bird</option>
-</select>
+<%= form_tag '/pets', method: 'get' do %>
+	<%= select_tag("animal", options_for_select(Pet::KINDS)) %>
+	<%= text_field_tag :location %>
+	<%= submit_tag "Search" %>
+<% end %>
+
+<% @pets.each do |pet| %>
+	<%= pet %>
+<% end %>

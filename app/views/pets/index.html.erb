@@ -7,15 +7,14 @@
 <% end %>
 <!-- could I set up the logic in here? Probably bad practice, but just to get it working... -->
 <!-- I want there to place all shelter names, not ids here -->
-<% @pets.each do |pet| %>
+<% @pet_list.each do |entry| %>
 	<tr>
-		<td><%= pet.name %></td>
-		<td><%= pet.sex %></td>
-		<td><%= pet.age %></td>
+		<!-- <td><img src=<%= entry.photos.first %>></td> -->
+		<td><img src="#{entry.photos.first.medium}" alt="Image of #{entry.name}"></td>
+		<td><%= link_to entry.name, "/pets/#{entry.id}" %></td>
+		<td><%= entry.sex %></td>
+		<td><%= entry.age %></td>
 	</tr>
 	<br>
 <% end %>
 <!-- The shelter method from petfinder takes a shelter id as input and returns the details of that particular shelter, I need to set it up so that everytime I click on a pet that they go to a page with the shelter id of that particular pet and render all pertinent info -->
-<!-- # <% @shelter_ids.each do |id| %>
-# 	<%= id %>
-# <% end %> -->

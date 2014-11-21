@@ -1,4 +1,7 @@
 class PetsController < ApplicationController
+	
+	$search_list
+
 	def index
 		# These come from the URL
 		# Example: http://localhost:3000/pets?location=Boston,MA&kind=cat
@@ -13,6 +16,7 @@ class PetsController < ApplicationController
 			@pet_list.each do |pet|
 				@shelter_ids << pet.shelter_id
 			end
+			$search_list = @pet_list
 		else
 			# Return an empty array of pets so that it doesn't get a NoMethod error when calling .each
 			@pet_list = []
@@ -24,10 +28,7 @@ class PetsController < ApplicationController
 		# @pet = Pet.new(pet_params)
 		# animal_id = params[:]
 		@animal_id = params[:id] #successfully grabs the id for the animal I'm looking at. 
-		@pet = @pet_list.find(@animal_id)
-	end
-
-	def pet_params
-		params.require(:pet).permit(:name, :age, :id, :shelter_id)
+		# @pet = @pet_list.find(@animal_id)
+		# @pet.name = "Jack"
 	end
 end

@@ -1,17 +1,4 @@
-<% #@pet_list.each do |entry| %>
-	<tr>
-		<!-- <td><img src=<%= entry.photos.first %>></td> -->
-		<% #if entry.id == @animal_id %>
-			<!-- <td><img src="#{entry.photos.first.large}" alt="Image of #{entry.name}"></td> -->
-			<!-- <td><%= link_to entry.name, "/pets/#{entry.id}" %></td> -->
-			<!-- <td><%= entry.sex %></td> -->
-			<!-- <td><%= entry.age %></td> -->
-		<% #end %>
-	</tr>
-<% #end %>
-
-<p>@pet.name</p>
-<!-- <td> -->
-	<!-- <tr>@pet.name</tr> -->
-	<!-- <tr><%= @animal_id %></tr> -->
-<!-- </td> -->
+<td>
+	<tr><%= $search_list.first.name %></tr>
+	<tr><%= @animal_id %></tr>
+</td>

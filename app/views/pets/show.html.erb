@@ -1,4 +1,16 @@
-<td>
-	<tr><%= $search_list.first.name %></tr>
-	<tr><%= @animal_id %></tr>
-</td>
+<% $search_list.each do |entry| %>
+	<tr>
+		<% if(entry.id == @animal_id) %>
+			<td><img src="#{entry.photos.first.medium}" alt="Image of #{entry.name}"></td>
+			<td><%= entry.name %></td>
+			<td><%= entry.sex %></td>
+			<td><%= entry.age %></td>
+		<% end %>
+	</tr>
+	<br>
+<% end %>
+<!-- Off to a decent start, looks terrible, but I've proven that the data comes through now -->
+<!-- <td> -->
+	<!-- <tr><%= $search_list.first.name %></tr> -->
+	<!-- <tr><%= @animal_id %></tr> -->
+<!-- </td> -->

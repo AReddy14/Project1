@@ -12,4 +12,8 @@ class Pet < ActiveRecord::Base
 		# Example: Pet.search('cat', 'Boston, MA')
 		@@petfinder.find_pets(animal, location)
 	end
+
+	def self.shelter(shelter_id)
+		@@petfinder.shelter(shelter_id)
+	end
 end

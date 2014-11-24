@@ -30,5 +30,11 @@ class PetsController < ApplicationController
 		@animal_id = params[:id] #successfully grabs the id for the animal I'm looking at. 
 		# @pet = @pet_list.find(@animal_id)
 		# @pet.name = "Jack"
+		$search_list.each do |entry|
+			if entry.id == @animal_id
+				@pet = entry
+				@shelter = Pet.shelter(entry.shelter_id)
+			end
+		end
 	end
 end

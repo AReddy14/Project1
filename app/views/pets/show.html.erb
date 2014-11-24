@@ -1,14 +1,13 @@
-<% $search_list.each do |entry| %>
-	<tr>
-		<% if(entry.id == @animal_id) %>
-			<td><img src="#{entry.photos.first.medium}" alt="Image of #{entry.name}"></td>
-			<td><%= entry.name %></td>
-			<td><%= entry.sex %></td>
-			<td><%= entry.age %></td>
-		<% end %>
-	</tr>
-	<br>
-<% end %>
+<tr>
+	<td><img src="#{@pet.photos.first.medium}" alt="Image of #{@pet.name}"></td>
+	<td><%= @pet.name %></td>
+	<td><%= @pet.sex %></td>
+	<td><%= @pet.age %></td>
+</tr>
+<br>
+
+<h1><%= @shelter.name %></h1>
+<!-- I will have to move stuff so that I do the logic in the controller, probably should put in the model, but I'm not messing with that right now. -->
 <!-- Off to a decent start, looks terrible, but I've proven that the data comes through now -->
 <!-- <td> -->
 	<!-- <tr><%= $search_list.first.name %></tr> -->

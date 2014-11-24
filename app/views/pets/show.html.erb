@@ -1,3 +1,9 @@
+<h1><%= @shelter.name %></h1>
+
+<p>Shelter E-mail: <%= @shelter.email %></p>
+<p>Shelter Address: <%= @shelter.address1 %>, <%= @shelter.city %>, <%= @shelter.state%> <%= @shelter.zip %></p>
+<p>Shelter Phone: <%= @shelter.phone %></p>
+
 <tr>
 	<td><img src="#{@pet.photos.first.medium}" alt="Image of #{@pet.name}"></td>
 	<td><%= @pet.name %></td>
@@ -6,7 +12,6 @@
 </tr>
 <br>
 
-<h1><%= @shelter.name %></h1>
 <!-- I will have to move stuff so that I do the logic in the controller, probably should put in the model, but I'm not messing with that right now. -->
 <!-- Off to a decent start, looks terrible, but I've proven that the data comes through now -->
 <!-- <td> -->
